@@ -1,17 +1,18 @@
 set i 3
 read obsX cell1 i
-jump 17 lessThan obsX 4
-jump 17 greaterThan obsX 16
+jump 18 lessThan obsX 4
+jump 18 greaterThan obsX 16
 op add next i 1
 read oneY cell1 0
 read obsY cell1 next
 op sub twoY 80 oneY
+op sub oneY oneY 3
 op sub onediff oneY obsY
 op sub twodiff twoY obsY
-jump 11 greaterThan onediff -3
-jump 14 lessThan onediff 3
-jump 15 greaterThanEq twodiff 3
-jump 15 lessThanEq twodiff -3
+jump 13 lessThanEq onediff -3
+jump 15 lessThan onediff 3
+jump 16 greaterThanEq twodiff 3
+jump 16 lessThanEq twodiff -3
 write 1 cell1 2
 op add i i 2
 jump 1 lessThan i 9
