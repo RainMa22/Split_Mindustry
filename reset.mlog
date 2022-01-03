@@ -1,0 +1,11 @@
+sensor reset switch1 @enabled
+jump 10 notEqual reset true
+control enabled switch1 0 0 0 0
+set i 9
+write 0 cell1 i
+op sub i i 1
+jump 4 greaterThan i 3
+write 6 cell1 0
+write 1 cell1 1
+write 0 cell1 2
+end

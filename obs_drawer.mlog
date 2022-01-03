@@ -1,0 +1,14 @@
+read end cell1 2
+jump 11 equal end true
+op add nextFrame @tick 1
+set i 3
+read obsX cell1 i
+jump 9 lessThanEq obsX 0
+op add next i 1
+read obsY cell1 next
+draw image obsX obsY @blast-compound 2 0 0
+op add i i 2
+jump 4 lessThan i 9
+drawflush display1
+jump 11 lessThan @tick nextFrame
+jump 0 always x false

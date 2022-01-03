@@ -1,0 +1,17 @@
+set isSpawn 0
+op add isSpawn isSpawn 1
+jump 1 lessThan isSpawn 83
+op add nextFrame @tick 1
+set i 3
+read obsX cell1 i
+jump 11 greaterThan obsX 0
+op rand obsY 78 b
+op add next i 1
+write 80 cell1 i
+write obsY cell1 next
+jump 15 always x false
+op add i i 2
+jump 5 lessThan i 9
+drawflush display1
+jump 14 lessThan @tick nextFrame
+jump 0 always x false

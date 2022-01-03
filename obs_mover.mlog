@@ -1,0 +1,11 @@
+set i 3
+op add nextFrame @tick 1
+op add next i 1
+read obsX cell1 i
+read obsY cell1 next
+op sub obsX obsX 2
+write obsX cell1 i
+op add i i 2
+jump 2 lessThan i 9
+jump 8 lessThan @tick nextFrame
+jump 0 always x false

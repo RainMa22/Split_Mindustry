@@ -1,0 +1,23 @@
+set oneY 6
+set diff 1
+write oneY cell1 0
+write diff cell1 1
+read end cell1 2
+jump 20 equal end true
+op add nextFrame @tick 1
+op mul diff diff 1.0000
+op add oneY oneY diff
+op sub twoY 80 oneY
+sensor switch switch1 @enabled
+jump 14 notEqual switch true
+control enabled switch1 0 0 0 0
+jump 16 always x false
+jump 16 lessThan oneY 6
+jump 17 lessThanEq oneY 74
+op mul diff diff -1
+draw clear 0 0 32 0 0 0
+draw image 10 oneY @flare 12 -90 0
+draw image 10 twoY @mono 12 -90 0
+drawflush display1
+jump 20 lessThan @tick nextFrame
+jump 2 always x false
